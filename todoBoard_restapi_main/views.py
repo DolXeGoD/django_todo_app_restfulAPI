@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, CreateAPIView
 
 from .models import TbTodoList
-from .serializers import TodoSerializer, TodoDetailSerializer
+from .serializers import TodoSerializer, TodoDetailSerializer, TodoCreateSerializer
 # Create your views here.
 from rest_framework import viewsets
 
@@ -28,4 +28,9 @@ class TodoBoard_restapi_delete(DestroyAPIView):
     lookup_field = 'no'
     queryset = TbTodoList.objects.all()
     serializer_class = TodoSerializer
+
+class TodoBoard_restapi_create(CreateAPIView):
+    queryset = TbTodoList.objects.all()
+    serializer_class = TodoCreateSerializer
+
 

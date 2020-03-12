@@ -11,3 +11,7 @@ class TodoDetailSerializer(serializers.ModelSerializer):
         model = TbTodoList
         fields = ('no', 'title', 'content', 'is_complete', 'end_date', 'priority')
 
+class TodoCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TbTodoList
+        fields = ('title', 'content', 'end_date')

@@ -15,6 +15,7 @@ urlpatterns = [
     url('api-auth/', include('rest_framework.urls')),
     url(r'^$', views.TodoBoard_restapi_main.as_view(), name='todo'),
     url(r'^todo_list/$', views.TodoBoard_restapi_main.as_view(), name='todo_list'),
+    url(r'^todo_list/create/$', views.TodoBoard_restapi_create.as_view(), name='todo_create'),
     url(r'^todo_list/(?P<no>\d+)/$', views.TodoBoard_restapi_detail.as_view(), name='todo_detail'),
     url(r'^todo_list/(?P<no>\d+)/update$', views.TodoBoard_restapi_update.as_view(), name='todo_update'),
     url(r'^todo_list/(?P<no>\d+)/delete$', views.TodoBoard_restapi_delete.as_view(), name='todo_delete')
