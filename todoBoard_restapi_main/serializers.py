@@ -6,4 +6,8 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
         model = TbTodoList
         fields = ('no', 'title', 'content', 'is_complete', 'end_date', 'priority')
 
+class TodoDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TbTodoList
+        fields = ('no', 'title', 'content', 'is_complete', 'end_date', 'priority')
 

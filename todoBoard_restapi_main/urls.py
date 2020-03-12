@@ -14,8 +14,8 @@ router.register(r'todo_board', views.TodoBoard_restapi_main)
 urlpatterns = [
     url('api-auth/', include('rest_framework.urls')),
     url(r'^$', views.TodoBoard_restapi_main.as_view(), name='todo'),
-    url(r'^todo_list/$', views.TodoBoard_restapi_main.as_view(), name='todo_list')
-    # url(r'^$', include(router.urls))
+    url(r'^todo_list/$', views.TodoBoard_restapi_main.as_view(), name='todo_list'),
+    url(r'^todo_list/(?P<no>\d+)/$', views.TodoBoard_restapi_detail.as_view(), name='todo_detail')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
