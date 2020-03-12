@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
 
 from .models import TbTodoList
 from .serializers import TodoSerializer, TodoDetailSerializer
@@ -18,3 +18,14 @@ class TodoBoard_restapi_detail(RetrieveAPIView):
     lookup_field = 'no'
     queryset = TbTodoList.objects.all()
     serializer_class = TodoDetailSerializer
+
+class TodoBoard_restapi_update(UpdateAPIView):
+    lookup_field = 'no'
+    queryset = TbTodoList.objects.all()
+    serializer_class = TodoSerializer
+
+class TodoBoard_restapi_delete(DestroyAPIView):
+    lookup_field = 'no'
+    queryset = TbTodoList.objects.all()
+    serializer_class = TodoSerializer
+
